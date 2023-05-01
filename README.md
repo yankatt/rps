@@ -3,7 +3,7 @@
 Install dependencies:
 
 ```sh
-npm install figlet
+npm install
 ```
 
 Install as global package
