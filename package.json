@@ -3,9 +3,18 @@
   "version": "0.0.1",
   "description": "Rock, paper, scissors",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "patch-version": "npm version patch -m \"Upgrade to patch version %s\"",
+    "minor-version": "npm version minor -m \"Upgrade to minor version %s\"",
+    "major-version": "npm version major -m \"Upgrade to major version %s\""
+  },
+  "bin": {
+    "rps": "./index.js"
   },
   "author": "Yannic Kattwinkel",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@inquirer/prompts": "^1.0.0"
+  }
 }
