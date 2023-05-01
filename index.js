@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 import { input, select } from '@inquirer/prompts';
+import chalk from 'chalk';
 import handleSignInput from './functions/handleSignInput.js';
 
 let scores = {
@@ -32,6 +33,14 @@ while(scores.player < 3 && scores.npc < 3) {
     ],
   });
 
-  handleSignInput(sign)
-  scores.npc++;
+  const winner = handleSignInput(sign, playerName)
+
+  if(winner) {
+    scores[winner]++
+  }
+
+  console.table({
+    player: scores.player,
+    npc: scores.npc
+  })
 }
