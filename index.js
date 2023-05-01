@@ -2,6 +2,7 @@
 
 import { input, select } from '@inquirer/prompts';
 import chalk from 'chalk';
+import figlet from 'figlet';
 import handleSignInput from './functions/handleSignInput.js';
 
 let scores = {
@@ -40,7 +41,21 @@ while(scores.player < 3 && scores.npc < 3) {
   }
 
   console.table({
-    player: scores.player,
+    [playerName]: scores.player,
     npc: scores.npc
   })
+  console.log('\n')
 }
+
+const won = scores.player === 3 ? true : false
+
+figlet.text(
+  `${won ? playerName : 'NPC'} WINS!`,
+  function (err, data) {
+  if (err) {
+    console.log("Something went wrong...");
+    console.dir(err);
+    return;
+  }
+  console.log(data);
+});
