@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 
 import { input, select } from '@inquirer/prompts';
-import chalk from 'chalk';
 import figlet from 'figlet';
 import handleSignInput from './functions/handleSignInput.js';
 
